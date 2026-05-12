@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="figs/latent_reasoning_logo.png" alt="Latent-GRPO logo" width="480"/>
+  <img src="figs/latent_reasoning_logo.png" alt="Latent-GRPO logo" width="300"/>
 
   <h2>Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning</h2>
 
