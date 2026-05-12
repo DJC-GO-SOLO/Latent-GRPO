@@ -18,7 +18,7 @@
 ## News
 
 - **Latent-GRPO paper**: The paper is available on arXiv: [Latent-GRPO](https://arxiv.org/abs/2604.27998).
-- **Code release**: This repository provides the data preparation scripts, customized SGLang rollout engine, verl-based GRPO training pipeline, and evaluation scripts used by Latent-GRPO.
+- **Code release**: This repository provides the data preparation scripts, customized SGLang rollout engine, verl-based Latent-GRPO training pipeline, and evaluation scripts used by Latent-GRPO.
 
 ## Overview
 
@@ -138,7 +138,7 @@ For RL training, set `MODEL_PATH` to a latent-reasoning checkpoint, set `DATA_DI
 We release the following useful checkpoints:
 
 - [`DJCheng/LLaMA3.2-1B-Instruct-Latent-SFT-Top10`](https://huggingface.co/DJCheng/LLaMA3.2-1B-Instruct-Latent-SFT-Top10)
-- [`DJCheng/Qwen2.5-Math-7B-Latent-GRPO-4k-Top10`](https://huggingface.co/DJCheng/Qwen2.5-Math-7B-Latent-GRPO-4k-Top10)
+- [`DJCheng/Qwen2.5-Math-7B-Latent-SFT-4k-Top10`](https://huggingface.co/DJCheng/Qwen2.5-Math-7B-Latent-GRPO-4k-Top10)
 
 ### Low-Difficulty Training
 
