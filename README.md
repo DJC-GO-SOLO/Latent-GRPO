@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="figs/latent_reasoning_logo.svg" alt="Latent-GRPO logo" width="480"/>
+  <img src="figs/latent_reasoning_logo.png" alt="Latent-GRPO logo" width="480"/>
 
   <h2>Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning</h2>
 
@@ -18,6 +18,7 @@
 ## News
 
 - **Latent-GRPO paper**: The paper is available on arXiv: [Latent-GRPO](https://arxiv.org/abs/2604.27998).
+- **Latent-SFT paper**: Latent-GRPO builds on our earlier latent-chain initialization work, [LLM Latent Reasoning as Chain of Superposition](https://arxiv.org/abs/2510.15522).
 - **Code release**: This repository provides the data preparation scripts, customized SGLang rollout engine, verl-based Latent-GRPO training pipeline, and evaluation scripts used by Latent-GRPO.
 
 ## Overview
@@ -83,13 +84,13 @@ You can also use the scripts under `data_preprocess_code/` to convert jsonl file
 
 ```bash
 python data_preprocess_code/gsm8k_aug.py \
-  --input_path data/GSM8k-Aug-train.jsonl \
-  --output_path data/GSM8k-Aug-oss-dup-all.parquet \
+  --input_path data/<your-gsm8k-style-train-file>.jsonl \
+  --output_path data/<your-gsm8k-style-train-file>.parquet \
   --split train
 
 python data_preprocess_code/math500_aug.py \
-  --input_path data/DAPO-Math-17k-en-train.jsonl \
-  --output_path data/DAPO-Math-17k-en-train.parquet \
+  --input_path data/<your-math-style-train-file>.jsonl \
+  --output_path data/<your-math-style-train-file>.parquet \
   --split train
 ```
 
@@ -132,13 +133,14 @@ cd ..
 
 > [!IMPORTANT]
 > Do not start Latent-GRPO from a model that has not been initialized with Latent-SFT. Directly applying latent RL to a non-latent-initialized model is unstable and can easily collapse.
+> If you initialize from a model trained with the official Latent-SFT repository, note that non-reasoning base models must include `<think>` in the chat template to enter reasoning mode. This framework does not automatically prepend the `<think>` token for you.
 
 For RL training, set `MODEL_PATH` to a latent-reasoning checkpoint, set `DATA_DIR` to the directory containing the parquet data, and choose an output directory.
 
 We release the following useful checkpoints:
 
 - [`DJCheng/LLaMA3.2-1B-Instruct-Latent-SFT-Top10`](https://huggingface.co/DJCheng/LLaMA3.2-1B-Instruct-Latent-SFT-Top10)
-- [`DJCheng/Qwen2.5-Math-7B-Latent-SFT-4k-Top10`](https://huggingface.co/DJCheng/Qwen2.5-Math-7B-Latent-GRPO-4k-Top10)
+- [`DJCheng/Qwen2.5-Math-7B-Latent-SFT-4k-Top10`](https://huggingface.co/DJCheng/Qwen2.5-Math-7B-Latent-SFT-4k-Top10)
 
 ### Low-Difficulty Training
 
@@ -261,9 +263,17 @@ You can evaluate these checkpoints directly with the corresponding low- or high-
 
 ## Citation
 
-If you find this repository useful, please cite our paper:
+If you find this repository useful, please cite our papers:
 
 ```bibtex
+@article{deng2025latentreasoning,
+  title        = {LLM Latent Reasoning as Chain of Superposition},
+  author       = {Deng, Jingcheng and Pang, Liang and Wei, Zihao and Xu, Shicheng and Duan, Zenghao and Xu, Kun and Song, Yang and Shen, Huawei and Cheng, Xueqi},
+  journal      = {arXiv preprint arXiv:2510.15522},
+  year         = {2025},
+  url          = {https://arxiv.org/abs/2510.15522}
+}
+
 @article{deng2026latentgrpo,
   title        = {Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning},
   author       = {Deng, Jingcheng and Wei, Zihao and Pang, Liang and Wu, Junhong and Xu, Shicheng and Duan, Zenghao and Shen, Huawei},
@@ -275,7 +285,7 @@ If you find this repository useful, please cite our paper:
 
 ## Acknowledgements
 
-We thank the [Soft-Thinking](https://github.com/eric-ai-lab/Soft-Thinking) project, which provided the base version for our SGLang framework development. We also thank the SGLang, verl, Hugging Face Transformers, PyTorch, and FlashAttention communities for their open-source infrastructure.
+We thank the [Soft-Thinking](https://github.com/eric-ai-lab/Soft-Thinking) project, which provided the base version for our SGLang framework development. We also thank [SofT-GRPO](https://github.com/zz1358m/SofT-GRPO-master) for their secondary development of verl, which provided a useful reference for our training framework. We also thank the SGLang, verl, Hugging Face Transformers, PyTorch, and FlashAttention communities for their open-source infrastructure.
 
 ## License
 
