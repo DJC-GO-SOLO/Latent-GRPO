@@ -266,20 +266,48 @@ You can evaluate these checkpoints directly with the corresponding low- or high-
 If you find this repository useful, please cite our papers:
 
 ```bibtex
-@article{deng2025latentreasoning,
-  title        = {LLM Latent Reasoning as Chain of Superposition},
-  author       = {Deng, Jingcheng and Pang, Liang and Wei, Zihao and Xu, Shicheng and Duan, Zenghao and Xu, Kun and Song, Yang and Shen, Huawei and Cheng, Xueqi},
-  journal      = {arXiv preprint arXiv:2510.15522},
+@article{DBLP:journals/corr/abs-2510-15522,
+  author       = {Jingcheng Deng and
+                  Liang Pang and
+                  Zihao Wei and
+                  Shicheng Xu and
+                  Zenghao Duan and
+                  Kun Xu and
+                  Yang Song and
+                  Huawei Shen and
+                  Xueqi Cheng},
+  title        = {Latent Reasoning in LLMs as a Vocabulary-Space Superposition},
+  journal      = {CoRR},
+  volume       = {abs/2510.15522},
   year         = {2025},
-  url          = {https://arxiv.org/abs/2510.15522}
+  url          = {https://doi.org/10.48550/arXiv.2510.15522},
+  doi          = {10.48550/ARXIV.2510.15522},
+  eprinttype   = {arXiv},
+  eprint       = {2510.15522},
+  timestamp    = {Tue, 14 Jul 2026 21:03:15 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2510-15522.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
-@article{deng2026latentgrpo,
+@article{DBLP:journals/corr/abs-2604-27998,
+  author       = {Jingcheng Deng and
+                  Zihao Wei and
+                  Liang Pang and
+                  Junhong Wu and
+                  Shicheng Xu and
+                  Zenghao Duan and
+                  Huawei Shen},
   title        = {Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning},
-  author       = {Deng, Jingcheng and Wei, Zihao and Pang, Liang and Wu, Junhong and Xu, Shicheng and Duan, Zenghao and Shen, Huawei},
-  journal      = {arXiv preprint arXiv:2604.27998},
+  journal      = {CoRR},
+  volume       = {abs/2604.27998},
   year         = {2026},
-  url          = {https://arxiv.org/abs/2604.27998}
+  url          = {https://doi.org/10.48550/arXiv.2604.27998},
+  doi          = {10.48550/ARXIV.2604.27998},
+  eprinttype   = {arXiv},
+  eprint       = {2604.27998},
+  timestamp    = {Tue, 19 May 2026 09:33:05 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2604-27998.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 ```
 
